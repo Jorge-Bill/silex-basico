@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Mensagens</h1>
+            <a class="btn btn-danger" href="<?php echo "/limpar-msgs"; ?>">Limpar Mensagens</a>
+            <hr>
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Mensagens</div>
+                    <div class="panel-body table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Mensagens</th>
+                                <th>Ações</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($msgs as $msg):?>
+                                <tr>
+                                    <td><?php echo $msg['id'];?></td>
+                                    <td><?php echo $msg['nome'];?></td>
+                                    <td><?php echo $msg['email'];?></td>
+                                    <td><?php echo substr($msg['mensagem'], 0, 30);?></td>
+                                    <td>
+                                        <a class="btn btn-sm btn-danger" href="<?php echo "/delete/{$msg['id']}"; ?>">
+                                            Excluir
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            <?php endforeach;?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+{
+    "require": {
+        "silex/silex": "~2.0",
+        "symfony/var-dumper": "^3.3",
+        "doctrine/dbal": "~2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "SON\\": "src"
+        }
+    }
+}
